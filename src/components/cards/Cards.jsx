@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Card } from "react-bootstrap";
-import ApiService from "../../services/ApiService";
+// import ApiService from "../../services/ApiService";
 // import { useNavigate } from "react-router-dom";
 import ModelComponent from "../model/ModelComponent";
 import "./cards.css";
@@ -11,19 +11,19 @@ function Cards(props) {
   // const navigate = useNavigate();
   const handleOnClick = () => {
     setModalShow(true);
-    ApiService.getEmployeeById(props.data.id)
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    // ApiService.getEmployeeById(props.data.id)
+    //   .then((res) => {
+    //     console.log(res);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
   };
 
   return (
     <>
       <ModelComponent
-        data={props.data}
+        data={props.data.id}
         show={modalShow}
         // view={view}
         onHide={() => {
