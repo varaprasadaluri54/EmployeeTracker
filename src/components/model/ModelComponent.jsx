@@ -32,7 +32,7 @@ function ModelComponent(props) {
   useEffect(() => {
     ApiService.getEmployeeById(props.data)
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         setData(res.data);
       })
       .catch((err) => {
@@ -98,7 +98,7 @@ function ModelComponent(props) {
                     type="date"
                     placeholder="Enter joining Date"
                     disabled={disabled ? "" : "disabled"}
-                    defaultValue={moment(`${data?.joiningDate}`).format(
+                    defaultValue={moment(data?.joiningDate).format(
                       "YYYY-MM-DD"
                     )}
                     onChange={handleChange}
@@ -126,7 +126,7 @@ function ModelComponent(props) {
                     required
                     type="date"
                     disabled={disabled ? "" : "disabled"}
-                    defaultValue={moment(`${data?.dob}`).format("YYYY-MM-DD")}
+                    defaultValue={moment(data.dob).format("YYYY-MM-DD")}
                     onChange={handleChange}
                   />
                 </Form.Group>
@@ -303,7 +303,7 @@ function ModelComponent(props) {
                     name="poSdate"
                     title="enter PO Start date"
                     defaultValue={moment(
-                      `${data.clientDetailsOfEmployee?.poSdate}`
+                      data.clientDetailsOfEmployee?.poSdate
                     ).format("YYYY-MM-DD")}
                     onChange={handleChange}
                   />
@@ -319,7 +319,7 @@ function ModelComponent(props) {
                     name="poEdate"
                     title="enter PO end date"
                     defaultValue={moment(
-                      `${data.clientDetailsOfEmployee?.poEdate}`
+                      data.clientDetailsOfEmployee?.poEdate
                     ).format("YYYY-MM-DD")}
                     onChange={handleChange}
                   />

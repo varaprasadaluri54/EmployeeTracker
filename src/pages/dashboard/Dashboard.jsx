@@ -11,7 +11,7 @@ const Dashboard = () => {
     // eslint-disable-line
     ApiService.getAllEmployees()
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         setEmployees(res.data);
         setStatus(true);
       })
