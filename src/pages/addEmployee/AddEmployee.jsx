@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import Header from "../../components/header/Header";
+
 import ApiService from "../../services/ApiService";
 
 import "./addEmployee.css";
@@ -38,9 +38,8 @@ const AddEmployee = () => {
   };
   return (
     <>
-      <Header />
       <div id="add-employee" className="container-sm ">
-        <h1 className="title text-center">Add Employee profile</h1>
+        <h1 className="title text-center">Employee profile</h1>
 
         <Form onSubmit={handleSubmit}>
           <Row>

@@ -22,15 +22,12 @@ export default function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Link className="m-2" to="/" id="nav-link">
-              {/* <HomeIcon className="icon" /> Home */}
-            </Link>
+            <Link className="m-2" to="/" id="nav-link"></Link>
           </Nav>
           <Nav id="nav">
             {[null, undefined].includes(token) && (
-              <Link className="m-2" to="/login" id="nav-link">
+              <Link className="m-2" to="/" id="nav-link">
                 Login
-                {/* <LoginIcon className="icon" /> */}
               </Link>
             )}
 

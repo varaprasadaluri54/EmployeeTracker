@@ -22,10 +22,10 @@ const Login = () => {
         console.log(res);
         sessionStorage.setItem("Access_Token", res.data.token);
         const username = jwt(res.data.token).sub;
-        console.log(username);
+        // console.log(username);
         sessionStorage.setItem("username", username);
         setErrors(false);
-        alert(`Login Successful `);
+        // alert(`Login Successful `);
         navigate("/dashboard");
       })
       .catch((error) => {

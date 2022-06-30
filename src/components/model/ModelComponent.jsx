@@ -340,7 +340,7 @@ function ModelComponent(props) {
                   />
                 </Form.Group>
                 <Form.Group className="mb-3">
-                  <Form.Label htmlFor="benchExp">bench Expences</Form.Label>
+                  <Form.Label htmlFor="benchExp">Total Expences</Form.Label>
                   <Form.Control
                     disabled
                     id="benchExp"
@@ -395,7 +395,7 @@ function ModelComponent(props) {
                   />
                 </Form.Group>
                 <Form.Group className="mb-3">
-                  <Form.Label htmlFor="profit">Profit</Form.Label>
+                  <Form.Label htmlFor="profit">Profit/Loss</Form.Label>
                   <Form.Control
                     disabled
                     id="profit"
