@@ -5,6 +5,8 @@ import Login from "./pages/login/Login";
 import Dashboard from "./pages/dashboard/Dashboard";
 import AddEmployee from "./pages/addEmployee/AddEmployee";
 import PrivateRoutes from "./routes/PrivateRoutes";
+import PromoteEmployee from "./pages/promoteEmployee/PromoteEmployee";
+import ExitEmployee from "./pages/exitEmployee/ExitEmployee";
 
 function App() {
   return (
@@ -25,6 +27,22 @@ function App() {
             element={
               <PrivateRoutes>
                 <AddEmployee />
+              </PrivateRoutes>
+            }
+          />
+          <Route
+            path="/promoteEmployee"
+            element={
+              <PrivateRoutes>
+                <PromoteEmployee />
+              </PrivateRoutes>
+            }
+          />
+          <Route
+            path="/exitEmployee"
+            element={
+              <PrivateRoutes>
+                <ExitEmployee />
               </PrivateRoutes>
             }
           />

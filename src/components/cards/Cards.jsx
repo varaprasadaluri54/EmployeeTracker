@@ -5,6 +5,8 @@ import { Button, Card } from "react-bootstrap";
 import ModelComponent from "../model/ModelComponent";
 import "./cards.css";
 function Cards(props) {
+  console.log(props.data);
+  const [status, setStatus] = useState(false);
   const [modalShow, setModalShow] = useState(false);
   // const [view, setView] = useState();
   // const [data, setData] = useState({});
@@ -46,12 +48,36 @@ function Cards(props) {
             {props.data.employeeName} <br />
             {/* Profit:&emsp;200 */}
           </Card.Text>
-          <Button
-            className="card-btn"
-            onClick={() => handleOnClick(props.data)}
-          >
-            View
-          </Button>
+          {props.data?.button === "Exit" ? (
+            status ? (
+              <>
+                <Button
+                  className="card-btn"
+                  // onClick={() => setStatus()}
+                >
+                  Confirm
+                </Button>{" "}
+                <Button
+                  variant="danger"
+                  // className="card-btn"
+                  onClick={() => setStatus(false)}
+                >
+                  Cancel
+                </Button>
+              </>
+            ) : (
+              <Button className="card-btn" onClick={() => setStatus(true)}>
+                Exit
+              </Button>
+            )
+          ) : (
+            <Button
+              className="card-btn"
+              onClick={() => handleOnClick(props.data)}
+            >
+              View
+            </Button>
+          )}
         </Card.Body>
       </Card>
     </>

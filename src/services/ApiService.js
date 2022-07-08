@@ -11,7 +11,7 @@ const ALL_EMPLOYEES_BY_ID = `${BASE_URL}/api/v1/emp/getting/id?id=`;
 const LOGIN_API_URL = `${BASE_URL}/api/v1/auth/login`;
 const REGISTER_API_URL = `${BASE_URL}/api/register`;
 const INSERT_EMP_DETAILS_API_URL = `${BASE_URL}/api/v1/emp/insert-emp-details`;
-
+const TEST = `http://10.81.4.195:2022/api/v1/admin/create-roles`;
 //delete
 
 export function auth() {
@@ -42,5 +42,8 @@ export default new (class ApiService {
   }
   getEmployeeById(id) {
     return axios.get(ALL_EMPLOYEES_BY_ID + id, auth());
+  }
+  getTest(data) {
+    return axios.post(TEST, data);
   }
 })();

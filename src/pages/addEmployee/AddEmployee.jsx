@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Button, Col, Form, Row } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
+import { FormInputs } from "../../components/formInputs/FormInputs";
 
 import ApiService from "../../services/ApiService";
 
@@ -23,9 +24,7 @@ const AddEmployee = () => {
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
-    setErrors(false);
-    console.log(data);
-
+    // setErrors(false);
     ApiService.insertEmployee(data)
       .then((res) => {
         console.log(res.data);
@@ -36,348 +35,329 @@ const AddEmployee = () => {
         console.log(error);
       });
   };
+  const formData = [
+    {
+      id: "employeeName",
+      title: "Employee name",
+      name: "firstName",
+      type: "text",
+      placeholder: "Enter Employee name",
+      required: true,
+      defaultValue: data.employeeName,
+      handleChange: handleChange,
+    },
+    {
+      id: "employeeId",
+      title: "Employee Id",
+      name: "employeeId",
+      type: "text",
+      placeholder: "Enter Employee Id",
+      required: true,
+      defaultValue: data.employeeId,
+      handleChange: handleChange,
+    },
+    {
+      id: "email",
+      title: "Email",
+      name: "email",
+      type: "email",
+      placeholder: "Enter Email",
+      required: true,
+      defaultValue: data.email,
+      handleChange: handleChange,
+    },
+
+    {
+      id: "phoneNo",
+      title: "Phone Number",
+      name: "phoneNo",
+      type: "tel",
+      placeholder: "Enter Phone Number",
+      required: true,
+      defaultValue: data.phoneNo,
+      handleChange: handleChange,
+    },
+
+    {
+      id: "Location",
+      title: "Location",
+      name: "location",
+      type: "text",
+      placeholder: "Enter Location",
+      required: true,
+      defaultValue: data.location,
+      handleChange: handleChange,
+    },
+    {
+      id: "i_c",
+      title: "I/C",
+      name: "i_c",
+      type: "text",
+      placeholder: "Enter I/C",
+      required: true,
+      defaultValue: data.i_c,
+      handleChange: handleChange,
+    },
+    {
+      id: "status",
+      title: "Status",
+      name: "status",
+      type: "text",
+      placeholder: "Enter Status",
+      required: true,
+      defaultValue: data.status,
+      handleChange: handleChange,
+    },
+    {
+      id: "Position",
+      title: "Position",
+      name: "position",
+      type: "text",
+      placeholder: "Enter Position",
+      required: true,
+      defaultValue: data.position,
+      handleChange: handleChange,
+    },
+    {
+      id: "department",
+      title: "Department",
+      name: "department",
+      type: "text",
+      placeholder: "Enter Department",
+      required: true,
+      defaultValue: data.department,
+      handleChange: handleChange,
+    },
+    {
+      id: "partice",
+      title: "Partice",
+      name: "partice",
+      type: "text",
+      placeholder: "Enter Partice",
+      required: true,
+      defaultValue: data.partice,
+      handleChange: handleChange,
+    },
+    {
+      id: "hrId",
+      title: "HR Id",
+      name: "hrId",
+      type: "text",
+      placeholder: "Enter HR Id",
+      required: true,
+      defaultValue: data.hrId,
+      handleChange: handleChange,
+    },
+    {
+      id: "employeeType",
+      title: "Employee Type",
+      name: "employeeType",
+      type: "text",
+      placeholder: "Enter Employee Type",
+      required: true,
+      defaultValue: data.employeeType,
+      handleChange: handleChange,
+    },
+    {
+      id: "SupervisorId",
+      title: "Supervisor Id",
+      name: "supervisorId",
+      type: "text",
+      placeholder: "Enter Supervisor Id",
+      required: true,
+      defaultValue: data.supervisorId,
+      handleChange: handleChange,
+    },
+    {
+      id: "country",
+      title: "Country",
+      name: "country",
+      type: "text",
+      placeholder: "Enter Country",
+      required: true,
+      defaultValue: data.country,
+      handleChange: handleChange,
+    },
+    {
+      id: "state",
+      title: "State",
+      name: "state",
+      type: "text",
+      placeholder: "Enter State",
+      required: true,
+      defaultValue: data.state,
+      handleChange: handleChange,
+    },
+    {
+      id: "pinCode",
+      title: "pinCode",
+      name: "pinCode",
+      type: "number",
+      placeholder: "Enter pinCode",
+      required: true,
+      defaultValue: data.pinCode,
+      handleChange: handleChange,
+    },
+    {
+      id: "city",
+      title: "City",
+      name: "city",
+      type: "text",
+      placeholder: "Enter City",
+      required: true,
+      defaultValue: data.city,
+      handleChange: handleChange,
+    },
+    {
+      id: "Street",
+      title: "Street",
+      name: "street",
+      type: "text",
+      placeholder: "Enter Street",
+      required: true,
+      defaultValue: data.street,
+      handleChange: handleChange,
+    },
+    {
+      id: "HouseNo",
+      title: "HouseNo",
+      name: "houseNo",
+      type: "text",
+      placeholder: "Enter HouseNo",
+      required: true,
+      defaultValue: data.houseNo,
+      handleChange: handleChange,
+    },
+    {
+      id: "addressType",
+      title: "Address Type",
+      name: "addressType",
+      type: "text",
+      placeholder: "Enter Address Type",
+      required: true,
+      defaultValue: data.addressType,
+      handleChange: handleChange,
+    },
+
+    {
+      id: "cubicalCost",
+      title: "Cubical Cost",
+      name: "cubicalCost",
+      type: "number",
+      placeholder: "Enter Cubical Cost",
+      required: true,
+      defaultValue: data.cubicalCost,
+      handleChange: handleChange,
+    },
+    {
+      id: "TransportCost",
+      title: "Transport Cost",
+      name: "transportCost",
+      type: "number",
+      placeholder: "Enter Transport Cost",
+      required: true,
+      defaultValue: data.transportCost,
+      handleChange: handleChange,
+    },
+    {
+      id: "foodCost",
+      title: "Food Cost",
+      name: "foodCost",
+      type: "number",
+      placeholder: "Enter Food Cost",
+      required: true,
+      defaultValue: data.foodCost,
+      handleChange: handleChange,
+    },
+    {
+      id: "salary",
+      title: "Salary",
+      name: "salary",
+      type: "number",
+      placeholder: "Enter Salary",
+      required: true,
+      defaultValue: data.salary,
+      handleChange: handleChange,
+    },
+  ];
   return (
     <>
       <div id="add-employee" className="container-sm ">
         <h1 className="title text-center">Employee profile</h1>
 
         <Form onSubmit={handleSubmit}>
-          <Row>
-            <Col>
-              <h4>Employee Details</h4>
-              <hr></hr>
-
-              <Form.Group className="mb-3">
-                <Form.Label htmlFor="firstName">EmployeeID</Form.Label>
-                <Form.Control
-                  name="employeeId"
-                  id="employeeId"
-                  required
-                  type="text"
-                  placeholder="Enter employeeId"
-                  defaultValue={data.employeeId}
-                  onChange={handleChange}
-                />
-              </Form.Group>
-              <Form.Group className="mb-3">
-                <Form.Label htmlFor="lastName">Employee name</Form.Label>
-                <Form.Control
-                  name="employeeName"
-                  id="employeeName"
-                  required
-                  type="text"
-                  placeholder="enter employee name"
-                  defaultValue={data.employeeName}
-                  onChange={handleChange}
-                />
-              </Form.Group>
-              <Form.Group className="mb-3">
-                <Form.Label htmlFor="joiningDate">Joining date</Form.Label>
-                <Form.Control
-                  name="joiningDate"
-                  id="joiningDate"
-                  required
-                  type="date"
-                  placeholder="Enter joining Date"
-                  defaultValue={data.joiningDate}
-                  onChange={handleChange}
-                />
-              </Form.Group>
-              {/* <Form.Group className="mb-3">
-                <Form.Label htmlFor="email">Email</Form.Label>
-                <Form.Control
-                  name="email"
-                  id="email"
-                  required
-                  type="email"
-                  placeholder="name@gmail.com"
-                  defaultValue={data.email}
-                  onChange={handleChange}
-                />
-              </Form.Group> */}
-              <Form.Group className="mb-3">
-                <Form.Label htmlFor="dateOfBirth">Date of Birth</Form.Label>
-                <Form.Control
-                  name="dob"
-                  id="dateOfBirth"
-                  required
-                  type="date"
-                  defaultValue={data.dob}
-                  onChange={handleChange}
-                />
-              </Form.Group>
-              {/* <Form.Group className="mb-3 checkbox">
-                <Form.Label>Gender : </Form.Label>{" "}
-                <Form.Check
-                  required
-                  inline
-                  label="Male"
-                  name="gender"
-                  type="radio"
-                  defaultValue={data.gender}
-                  onChange={(e) => {
-                    data.gender = "Male";
-                  }}
-                />
-                <Form.Check
-                  inline
-                  label="Female"
-                  name="gender"
-                  type="radio"
-                  defaultValue={data.gender}
-                  onChange={(e) => {
-                    data.gender = "Female";
-                  }}
-                />
-              </Form.Group> */}
-              {/* <Form.Group className="mb-3">
-                <Form.Label htmlFor="phone number">Phone Number</Form.Label>
-                <Form.Control
-                  // required
-                  id="phone number"
-                  type="tel"
-                  // pattern="[+91][0-9]{13}"
-                  // pattern="[0-9]{10}"
-                  message="please enter correct number"
-                  placeholder="please enter phone number"
-                  name="phoneNo"
-                  // placeholder="+919999999999"
-                  // pattern="[+91][0-9].{11}"
-                  // maxLength={13}
-                  title="enter phone number like +919999999999"
-                  defaultValue={data.phoneNo}
-                  onChange={handleChange}
-                />
-              </Form.Group> */}
-              <Form.Group className="mb-3">
-                <Form.Label htmlFor="salary">Salary</Form.Label>
-                <Form.Control
-                  required
-                  id="salary"
-                  type="number"
-                  placeholder="please enter salary"
-                  name="salary"
-                  title="enter salary"
-                  defaultValue={data.salary}
-                  onChange={handleChange}
-                />
-              </Form.Group>
-              <Form.Group className="mb-3">
-                <Form.Label htmlFor="practice">Practice</Form.Label>
-                <Form.Control
-                  required
-                  id="practice"
-                  type="text"
-                  placeholder="please enter practice"
-                  name="practice"
-                  title="enter salary"
-                  defaultValue={data.practice}
-                  onChange={handleChange}
-                />
-              </Form.Group>
-              <Form.Group className="mb-3">
-                <Form.Label htmlFor="designationAtLs">
-                  Designation at Lancesoft
-                </Form.Label>
-                <Form.Control
-                  required
-                  id="designationAtLs"
-                  type="text"
-                  placeholder="please enter designation at Lancesoft"
-                  name="designationAtLs"
-                  title="enter designation"
-                  defaultValue={data.designationAtLs}
-                  onChange={handleChange}
-                />
-              </Form.Group>
-            </Col>
-            <Col>
-              <h4>Client Details</h4>
-              <hr></hr>
-              <Form.Group className="mb-3">
-                <Form.Label htmlFor="designationAtClient">
-                  Designation at Client
-                </Form.Label>
-                <Form.Control
-                  // required
-                  id="designationAtClient"
-                  type="text"
-                  placeholder="please enter designation at Client"
-                  name="clientDetailsOfEmployee.designationAtLs"
-                  title="enter designation"
-                  defaultValue={
-                    data.clientDetailsOfEmployee?.designationAtClient
-                  }
-                  onChange={(e) => {
-                    setData({
-                      ...data,
-                      clientDetailsOfEmployee: {
-                        ...data.clientDetailsOfEmployee,
-                        designationAtClient: e.target.value,
-                      },
-                    });
-                  }}
-                />
-              </Form.Group>
-              <Form.Group className="mb-3">
-                <Form.Label htmlFor="clientName">Client Name</Form.Label>
-                <Form.Control
-                  // required
-                  id="clientName"
-                  type="text"
-                  placeholder="please enter Client name"
-                  name="clientDetailsOfEmployee.clientName"
-                  title="enter client name"
-                  defaultValue={data.clientDetailsOfEmployee?.clientName}
-                  onChange={(e) => {
-                    setData({
-                      ...data,
-                      clientDetailsOfEmployee: {
-                        ...data.clientDetailsOfEmployee,
-                        clientName: e.target.value,
-                      },
-                    });
-                  }}
-                />
-              </Form.Group>
-              <Form.Group className="mb-3">
-                <Form.Label htmlFor="clientBilling">Client billing</Form.Label>
-                <Form.Control
-                  // required
-                  id="clientBilling"
-                  type="number"
-                  placeholder="please enter Client billing"
-                  name="clientDetailsOfEmployee.clientBilling"
-                  title="enter Client billing"
-                  defaultValue={data.clientDetailsOfEmployee?.clientBilling}
-                  onChange={(e) => {
-                    setData({
-                      ...data,
-                      clientDetailsOfEmployee: {
-                        ...data.clientDetailsOfEmployee,
-                        clientBilling: e.target.value,
-                      },
-                    });
-                  }}
-                />
-              </Form.Group>
-              <Form.Group className="mb-3">
-                <Form.Label htmlFor="poSdate">PO Start date</Form.Label>
-                <Form.Control
-                  // required
-                  id="poSdate"
-                  type="date"
-                  placeholder="please enter PO Start date"
-                  name="clientDetailsOfEmployee.poSdate"
-                  title="enter PO Start date"
-                  defaultValue={data.clientDetailsOfEmployee?.poSdate}
-                  onChange={(e) => {
-                    setData({
-                      ...data,
-                      clientDetailsOfEmployee: {
-                        ...data.clientDetailsOfEmployee,
-                        poSdate: e.target.value,
-                      },
-                    });
-                  }}
-                />
-              </Form.Group>
-              <Form.Group className="mb-3">
-                <Form.Label htmlFor="poEdate">PO end date</Form.Label>
-                <Form.Control
-                  // required
-                  id="poEdate"
-                  type="date"
-                  placeholder="please enter PO end date"
-                  name="clientDetailsOfEmployee.poEdate"
-                  title="enter PO end date"
-                  defaultValue={data.clientDetailsOfEmployee?.poEdate}
-                  onChange={(e) => {
-                    setData({
-                      ...data,
-                      clientDetailsOfEmployee: {
-                        ...data.clientDetailsOfEmployee,
-                        poEdate: e.target.value,
-                      },
-                    });
-                  }}
-                />
-              </Form.Group>
-            </Col>
-            <Col>
-              <h4>Bill</h4>
-              <hr></hr>
-              <Form.Group className="mb-3">
-                <Form.Label htmlFor="cubicalCost">Cubical cost</Form.Label>
-                <Form.Control
-                  required
-                  id="cubicalCost"
-                  type="number"
-                  placeholder="please enter cubical cost"
-                  name="bill.cubicalCost"
-                  title="enter Cubical cost"
-                  defaultValue={data.bill?.cubicalCost}
-                  onChange={(e) => {
-                    setData({
-                      ...data,
-                      bill: {
-                        ...data.bill,
-                        cubicalCost: e.target.value,
-                      },
-                    });
-                  }}
-                />
-              </Form.Group>
-              <Form.Group className="mb-3">
-                <Form.Label htmlFor="foodCost">Food Cost</Form.Label>
-                <Form.Control
-                  required
-                  id="foodCost"
-                  type="number"
-                  placeholder="please enter food Cost"
-                  name="bill.foodCost"
-                  title="enter food Cost"
-                  defaultValue={data.bill?.foodCost}
-                  onChange={(e) => {
-                    setData({
-                      ...data,
-                      bill: {
-                        ...data.bill,
-                        foodCost: e.target.value,
-                      },
-                    });
-                  }}
-                />
-              </Form.Group>
-              <Form.Group className="mb-3">
-                <Form.Label htmlFor="transportCost">Transport Cost</Form.Label>
-                <Form.Control
-                  required
-                  id="transportCost"
-                  type="number"
-                  placeholder="please enter Transport Cost"
-                  name="bill.[0].transportCost"
-                  title="enter Transport Cost"
-                  defaultValue={data.bill?.transportCost}
-                  onChange={(e) => {
-                    setData({
-                      ...data,
-                      bill: {
-                        ...data.bill,
-                        transportCost: e.target.value,
-                      },
-                    });
-                  }}
-                />
-              </Form.Group>
-              <Button className="btn-signup" type="submit">
-                Add
-              </Button>{" "}
-              <Button as={Link} to="/dashboard" variant="danger">
-                Cancel
-              </Button>
-            </Col>
-          </Row>
+          <h4>Employee Details</h4>
+          <hr></hr>
+          <div className="form">
+            {formData.map((item, index) => (
+              <FormInputs
+                key={item.id}
+                id={item.id}
+                title={item.title}
+                name={item.name}
+                type={item.type}
+                placeholder={item.placeholder}
+                required={item.required}
+                defaultValue={item.defaultValue}
+                handleChange={item.handleChange}
+              />
+            ))}
+          </div>
+          <div className="form">
+            <FormInputs
+              key="joiningDate"
+              id="joiningDate"
+              title="Joining Date"
+              name="joiningDate"
+              type="date"
+              placeholder="Enter Joining Date"
+              required={true}
+              defaultValue={data.joiningDate}
+              handleChange={handleChange}
+            />
+            <FormInputs
+              key="dob"
+              id="dob"
+              title="Date of Birth"
+              name="dob"
+              type="date"
+              placeholder="Enter Date of Birth"
+              required={true}
+              defaultValue={data.dob}
+              handleChange={handleChange}
+            />
+            <Form.Group className="my-4 checkbox">
+              <Form.Label>Gender : </Form.Label>{" "}
+              <Form.Check
+                required
+                inline
+                label="Male"
+                name="gender"
+                type="radio"
+                defaultValue={data.gender}
+                onChange={(e) => {
+                  data.gender = "Male";
+                }}
+              />
+              <Form.Check
+                inline
+                label="Female"
+                name="gender"
+                type="radio"
+                defaultValue={data.gender}
+                onChange={(e) => {
+                  data.gender = "Female";
+                }}
+              />
+            </Form.Group>
+          </div>
+          <Button className="btn-signup" type="submit">
+            Submit
+          </Button>{" "}
+          <Button as={Link} to="/dashboard" variant="danger">
+            Cancel
+          </Button>
+          {/* </Col> */}
         </Form>
       </div>
     </>

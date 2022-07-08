@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Container, Dropdown, Nav, Navbar, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import lancesoft_logo from "../../lancesoft_logo.png";
 import "./header.css";
@@ -33,9 +33,35 @@ export default function Header() {
 
             {![null, undefined].includes(token) && (
               <>
-                <Link className="m-2" to="/addEmployee" id="nav-link">
-                  Add Employee
-                </Link>
+                <Dropdown>
+                  <Dropdown.Toggle
+                    className="toggle"
+                    variant=""
+                    id="dropdown-basic dropdownMenu dropdown-autoclose-true "
+                  >
+                    {/* <img src={profilepic} alt="profile" className="img" /> */}
+                    <p id="nav-link" className="username">
+                      Employee
+                    </p>
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <Row>
+                      <Link className="m-2" to="/addEmployee" id="nav-link">
+                        Add Employee
+                      </Link>
+                      <Link className="m-2" to="/promoteEmployee" id="nav-link">
+                        Promote Employee
+                      </Link>
+                      <Link className="m-2" to="/exitEmployee" id="nav-link">
+                        Exit Employee
+                      </Link>
+                      <Link className="m-2" to="/profile" id="nav-link">
+                        Profile
+                      </Link>
+                    </Row>
+                  </Dropdown.Menu>
+                </Dropdown>
+
                 <Link
                   className="m-2"
                   to="/"
