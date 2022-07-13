@@ -408,6 +408,10 @@ function ModelComponent(props) {
                   <Button className="btn-signup" type="submit">
                     Submit
                   </Button>
+                ) : ["md"].includes(props.type) ? (
+                  <Button className="btn-signup" type="submit">
+                    Transfer
+                  </Button>
                 ) : (
                   <Button
                     className="btn-signup"

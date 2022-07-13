@@ -9,7 +9,7 @@ import "./addEmployee.css";
 
 const AddEmployee = () => {
   const [data, setData] = useState({});
-
+  const [status, setStatus] = useState(false);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setData({ ...data, [name]: value });
@@ -24,15 +24,19 @@ const AddEmployee = () => {
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
+    setStatus(true);
     // setErrors(false);
     ApiService.insertEmployee(data)
       .then((res) => {
         console.log(res.data);
         alert("successfull");
         navigate("/dashboard");
+        setStatus(false);
       })
       .catch((error) => {
         console.log(error);
+        setStatus(false);
+        setErrors(false);
       });
   };
   const formData = [
@@ -351,13 +355,18 @@ const AddEmployee = () => {
               />
             </Form.Group>
           </div>
-          <Button className="btn-signup" type="submit">
+          <Button className="btn-signup px-2" type="submit">
             Submit
           </Button>{" "}
-          <Button as={Link} to="/dashboard" variant="danger">
+          <Button as={Link} to="/dashboard" variant="danger" className="px-2">
             Cancel
           </Button>
           {/* </Col> */}
+          {status && (
+            <p className="text-success mb-1">
+              Please wait while we are processing your request.
+            </p>
+          )}
         </Form>
       </div>
     </>

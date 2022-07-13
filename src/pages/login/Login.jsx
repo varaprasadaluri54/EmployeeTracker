@@ -11,12 +11,11 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState(false);
-
+  const [status, setStatus] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const loginData = { username: username, password: password };
-
+    setStatus(true);
     ApiService.login(loginData)
       .then((res) => {
         console.log(res);
@@ -24,12 +23,14 @@ const Login = () => {
         const username = jwt(res.data.token).sub;
         // console.log(username);
         sessionStorage.setItem("username", username);
+        setStatus(false);
         setErrors(false);
         // alert(`Login Successful `);
         navigate("/dashboard");
       })
       .catch((error) => {
         console.log(error);
+        setStatus(false);
         setErrors(true);
       });
   };
@@ -69,6 +70,11 @@ const Login = () => {
         <Button type="submit" variant="success" className="login-button">
           Login
         </Button>
+        {status && (
+          <p className="text-success mb-1">
+            Please wait while we are processing your request.
+          </p>
+        )}
       </Form>
     </div>
   );

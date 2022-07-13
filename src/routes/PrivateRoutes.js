@@ -9,7 +9,7 @@ function PrivateRoutes({ children }) {
     <Navigate to="/" />
   ) : (
     <>
-      <Header />
+      <Header type="employee" />
       {children}
     </>
   );

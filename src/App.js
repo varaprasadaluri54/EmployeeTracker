@@ -7,6 +7,14 @@ import AddEmployee from "./pages/addEmployee/AddEmployee";
 import PrivateRoutes from "./routes/PrivateRoutes";
 import PromoteEmployee from "./pages/promoteEmployee/PromoteEmployee";
 import ExitEmployee from "./pages/exitEmployee/ExitEmployee";
+import Finance from "./components/finance/Finance";
+import ClientDomestic from "./pages/clientDomestic/ClientDomestic";
+import InternalDomestic from "./pages/internalDomestic/InternalDomestic";
+import ClientInternational from "./pages/clientinternational/ClientInternational";
+import InternalInternational from "./pages/internalInternational/InternalInternational";
+import MD from "./pages/md/MD";
+import Manager from "./pages/manager/Manager";
+import AddClientDetails from "./pages/addClientDetails/AddClientDetails";
 
 function App() {
   return (
@@ -44,6 +52,70 @@ function App() {
               <PrivateRoutes>
                 <ExitEmployee />
               </PrivateRoutes>
+            }
+          />
+          <Route
+            path="/finance"
+            element={
+              // <PrivateRoutes>
+              <Finance />
+              // </PrivateRoutes>
+            }
+          />
+          <Route
+            path="/clientDomestic"
+            element={
+              // <PrivateRoutes>
+              <ClientDomestic />
+              // </PrivateRoutes>
+            }
+          />
+          <Route
+            path="/internalDomestic"
+            element={
+              // <PrivateRoutes>
+              <InternalDomestic />
+              // </PrivateRoutes>
+            }
+          />
+          <Route
+            path="/clientInternational"
+            element={
+              // <PrivateRoutes>
+              <ClientInternational />
+              // </PrivateRoutes>
+            }
+          />
+          <Route
+            path="/internalInternational"
+            element={
+              // <PrivateRoutes>
+              <InternalInternational />
+              // </PrivateRoutes>
+            }
+          />
+          <Route
+            path="/md"
+            element={
+              // <PrivateRoutes>
+              <MD />
+              // </PrivateRoutes>
+            }
+          />
+          <Route
+            path="/manager"
+            element={
+              // <PrivateRoutes>
+              <Manager />
+              // </PrivateRoutes>
+            }
+          />
+          <Route
+            path="/addClientDetails"
+            element={
+              // <PrivateRoutes>
+              <AddClientDetails />
+              // </PrivateRoutes>
             }
           />
         </Route>

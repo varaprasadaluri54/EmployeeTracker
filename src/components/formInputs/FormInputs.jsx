@@ -17,7 +17,6 @@ export function FormInputs(props) {
           onChange={props.handleChange}
         />
       </Form.Group>
-      <br />
     </>
   );
 }
