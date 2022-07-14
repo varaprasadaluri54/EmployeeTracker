@@ -15,6 +15,7 @@ import InternalInternational from "./pages/internalInternational/InternalInterna
 import MD from "./pages/md/MD";
 import Manager from "./pages/manager/Manager";
 import AddClientDetails from "./pages/addClientDetails/AddClientDetails";
+import Lead from "./pages/lead/Lead";
 
 function App() {
   return (
@@ -115,6 +116,14 @@ function App() {
             element={
               // <PrivateRoutes>
               <AddClientDetails />
+              // </PrivateRoutes>
+            }
+          />
+          <Route
+            path="/lead"
+            element={
+              // <PrivateRoutes>
+              <Lead />
               // </PrivateRoutes>
             }
           />

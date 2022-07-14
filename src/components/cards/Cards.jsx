@@ -100,20 +100,35 @@ function Cards(props) {
               {viewEmployee &&
                 (props.type === "md" ? (
                   <div>
-                    <span>1. Lead1</span>
+                    <span className="employees">1. Lead1</span>
                     <br />
-                    <span>2. Lead2</span>
+                    <span className="employees">2. Lead2</span>
                     <br />
-                    <span>3. Lead3</span>
+                    <span className="employees">3. Lead3</span>
                   </div>
                 ) : (
                   props.type === "manager" && (
                     <div>
-                      <span onClick={() => handleClick(1)}>1. associate1</span>
+                      <span
+                        className="employees"
+                        onClick={() => handleClick(1)}
+                      >
+                        1. associate1
+                      </span>
                       <br />
-                      <span onClick={() => handleClick(2)}>2. associate2</span>
+                      <span
+                        className="employees"
+                        onClick={() => handleClick(2)}
+                      >
+                        2. associate2
+                      </span>
                       <br />
-                      <span onClick={() => handleClick(3)}>3. associate3</span>
+                      <span
+                        className="employees"
+                        onClick={() => handleClick(3)}
+                      >
+                        3. associate3
+                      </span>
                     </div>
                   )
                 ))}

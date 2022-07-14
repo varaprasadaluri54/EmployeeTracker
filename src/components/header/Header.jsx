@@ -157,8 +157,22 @@ export default function Header({ type }) {
               ) : ["manager"].includes(type) ? (
                 <>
                   <Link className="m-2" to="/addClientDetails" id="nav-link">
-                    Add client details
+                    Add Client details
                   </Link>
+                  <Link className="m-2" to="/" id="nav-link">
+                    Profile
+                  </Link>
+                  <Link
+                    className="m-2"
+                    to="/"
+                    onClick={handlefunction}
+                    id="nav-link"
+                  >
+                    Logout
+                  </Link>
+                </>
+              ) : ["lead"].includes(type) ? (
+                <>
                   <Link className="m-2" to="/" id="nav-link">
                     Profile
                   </Link>
