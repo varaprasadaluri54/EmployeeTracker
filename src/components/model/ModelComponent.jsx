@@ -90,6 +90,19 @@ function ModelComponent(props) {
                   />
                 </Form.Group>
                 <Form.Group className="mb-3">
+                  <Form.Label htmlFor="vertical">Vertical</Form.Label>
+                  <Form.Control
+                    name="vertical"
+                    id="vertical"
+                    required
+                    type="text"
+                    disabled={disabled ? "" : "disabled"}
+                    placeholder="enter vertical"
+                    defaultValue={data.vertical}
+                    onChange={handleChange}
+                  />
+                </Form.Group>
+                <Form.Group className="mb-3">
                   <Form.Label htmlFor="joiningDate">Joining date</Form.Label>
                   <Form.Control
                     name="joiningDate"
