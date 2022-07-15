@@ -38,7 +38,7 @@ export default function Header({ type }) {
                     <Dropdown.Toggle
                       className="toggle"
                       variant=""
-                      id="dropdown-basic dropdownMenu dropdown-autoclose-true "
+                      // id="dropdown-basic dropdownMenu dropdown-autoclose-true "
                     >
                       <p id="nav-link" className="username">
                         Domestic
@@ -67,7 +67,7 @@ export default function Header({ type }) {
                     <Dropdown.Toggle
                       className="toggle"
                       variant=""
-                      id="dropdown-basic dropdownMenu dropdown-autoclose-true "
+                      // id="dropdown-basic dropdownMenu dropdown-autoclose-true "
                     >
                       <p id="nav-link" className="username">
                         International
@@ -92,6 +92,14 @@ export default function Header({ type }) {
                       </Row>
                     </Dropdown.Menu>
                   </Dropdown>
+                  <Link
+                    className="m-2"
+                    to="/"
+                    onClick={handlefunction}
+                    id="nav-link"
+                  >
+                    Logout
+                  </Link>
                 </>
               ) : ["employee"].includes(type) ? (
                 <>

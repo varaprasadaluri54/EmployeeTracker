@@ -8,7 +8,7 @@ function ClientInternational() {
       <Header type="finance" />
       <div id="add-employee" className="container-sm ">
         <h1 className="title text-center">Client International Expences</h1>
-        <Expences type="clientDomestic" />
+        <Expences type="1" />
       </div>
     </>
   );

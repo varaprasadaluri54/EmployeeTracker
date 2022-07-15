@@ -22,9 +22,11 @@ function Manager() {
   return (
     <>
       <Header type="manager" />
-      {employee.map((employee) => (
-        <Cards key={employee.id} data={employee} type="manager" />
-      ))}
+      <div className="lead">
+        {employee.map((employee) => (
+          <Cards key={employee.id} data={employee} type="manager" />
+        ))}
+      </div>
     </>
   );
 }
